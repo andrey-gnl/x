@@ -18,7 +18,7 @@ export default class PlayOff extends Component {
     .then(result => {
       data.push(...result.data.match);
 
-      // get fixtures
+      // get upcoming matches
       return fetch(`api-client/fixtures/matches.json?key=${process.env.REACT_APP_API_KEY}&secret=${process.env.REACT_APP_API_SECRET}&competition_id=244`);
     })
     .then(response => response.json())
