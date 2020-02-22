@@ -32,6 +32,12 @@
   padding: 13px;
   background:#eee;
   font-size: 18px;
+  cursor: pointer;
+  transition: background .3s ease-out;
+}
+
+.match:hover, .match.is-active {
+  background: rgb(250, 205, 4);
 }
 
 .match__date {
