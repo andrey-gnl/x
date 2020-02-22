@@ -1,0 +1,83 @@
+.stage {
+  padding: 20px;
+}
+
+.stage__header {
+  margin-bottom: 10px;
+  padding: 13px;
+  background: #eee;
+  font-weight: bold;
+}
+
+.stage__date {
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.stage__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.stage__item {
+  width: 50%;
+  padding: 0 10px 10px;
+}
+
+.match {
+  padding: 13px;
+  background:#eee;
+  font-size: 18px;
+}
+
+.match__date {
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+}
+
+.match__teams {
+  display: flex;
+}
+
+.match__team {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.match__team-logo {
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  text-align: center;
+}
+
+.match__team-logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.match__team:first-child {
+  position: relative;
+  text-align: right;
+}
+
+.match__score {
+  white-space: nowrap;
+  padding: 0 10px;
+}
+
+/* .match__team:first-child::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -3px;
+  height: 2px;
+  width: 6px;
+  background: #000;
+} */
