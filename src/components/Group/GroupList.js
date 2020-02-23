@@ -47,7 +47,10 @@ export default class GroupList extends Component {
   }
 
   componentDidMount() {
-    // fetch to get group standings
+    /* TODO: make request to group data
+     /v1/competitions/1/seasons/2020/standings
+    */
+
     this.setState({groupData: data});
   }
 

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Stage from './Stage';
+import { API_KEY, API_SECRET_KEY, UCL_ID } from '../constants'
+
 import './playoff.css';
 
 export default class PlayOff extends Component {
@@ -13,13 +15,13 @@ export default class PlayOff extends Component {
     let data = [];
 
     // get past results
-    fetch(`api-client/scores/history.json?key=${process.env.REACT_APP_API_KEY}&secret=${process.env.REACT_APP_API_SECRET}&competition_id=244&from=2020-01-01&to=${date}`)
+    fetch(`api-client/scores/history.json?key=${API_KEY}&secret=${API_SECRET_KEY}&competition_id=${UCL_ID}&from=2020-01-01&to=${date}`)
     .then(response => response.json())
     .then(result => {
       data.push(...result.data.match);
 
-      // get fixtures
-      return fetch(`api-client/fixtures/matches.json?key=${process.env.REACT_APP_API_KEY}&secret=${process.env.REACT_APP_API_SECRET}&competition_id=244`);
+      // get upcoming matches
+      return fetch(`api-client/fixtures/matches.json?key=${API_KEY}&secret=${API_SECRET_KEY}&competition_id=${UCL_ID}`);
     })
     .then(response => response.json())
     .then(result => {

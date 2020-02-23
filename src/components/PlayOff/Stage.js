@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Match from './Match';
+import Match from '../Match/';
 
 
 class Stage extends Component {
@@ -12,17 +12,15 @@ class Stage extends Component {
   }
 
   makeActiveMatch(home_id, away_id) {
-    let activeId = null;
 
-    this.state.teams.some(m => {
-     if(home_id === m.away_id && away_id === m.home_id) {
-      activeId = m.id
+    this.state.teams.some(match => {
+     if(home_id === match.away_id && away_id === match.home_id) {
+      this.setState({activeMatch: match.id})
       return true;
      }
      return false;
     });
 
-    this.setState({activeMatch: activeId})
   }
 
   resetActive() {
@@ -42,15 +40,15 @@ class Stage extends Component {
             away_team={{name: match.away_name, id: match.away_id }}
             score={match.score ? match.score : ' - '}
             isActive={activeMatch === match.id}
-            onHover={this.makeActiveMatch.bind(this)}
-            resetActive={this.resetActive.bind(this)}
+            onMouseEnterHandler={this.makeActiveMatch.bind(this)}
+            onMouseLeaveHandler={this.resetActive.bind(this)}
             />
         </div>
       ));
 
   return (
     <div className="stage">
-      <div className="stage__header">Stage: {stage}</div>
+      <div className="stage__header">{stage}</div>
       <div className="stage__items">
         {fixtures}
       </div>
