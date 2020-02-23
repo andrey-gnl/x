@@ -27,14 +27,3 @@
   width: 50%;
   padding: 0 10px 10px;
 }
-
-
-/* .match__team:first-child::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -3px;
-  height: 2px;
-  width: 6px;
-  background: #000;
-} */

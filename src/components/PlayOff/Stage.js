@@ -12,17 +12,15 @@ class Stage extends Component {
   }
 
   makeActiveMatch(home_id, away_id) {
-    let activeId = null;
 
-    this.state.teams.some(m => {
-     if(home_id === m.away_id && away_id === m.home_id) {
-      activeId = m.id
+    this.state.teams.some(match => {
+     if(home_id === match.away_id && away_id === match.home_id) {
+      this.setState({activeMatch: match.id})
       return true;
      }
      return false;
     });
 
-    this.setState({activeMatch: activeId})
   }
 
   resetActive() {

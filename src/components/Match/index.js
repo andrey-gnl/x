@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './match.css';
 
-
 class Match extends Component {
+
   static defaultProps = {
     onMouseEnterHandler: function() {},
     onMouseLeaveHandler: function() {},
