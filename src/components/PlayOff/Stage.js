@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Match from '../Match/';
 
 
@@ -24,7 +23,7 @@ class Stage extends Component {
   }
 
   resetActive() {
-    this.setState({activeMatch: null})
+    this.setState({activeMatch: null});
   }
 
   render() {

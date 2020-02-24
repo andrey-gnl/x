@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Group from './Group';
-import './group.css'
+import './group.sass'
 
 
 const data = [

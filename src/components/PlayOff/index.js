@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Stage from './Stage';
 import { API_KEY, API_SECRET_KEY, UCL_ID } from '../constants'
 
-import './playoff.css';
+import './playoff.sass';
 
 export default class PlayOff extends Component {
   constructor(props) {
