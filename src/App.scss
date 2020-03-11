@@ -7,11 +7,21 @@ body {
 }
 
 .page {
-  max-width: 1100px;
+  display: flex;
+  max-width: 1600px;
   min-height: 100vh;
   margin: 0 auto;
   border-left: 7px solid rgb(12, 25, 138);
   border-right: 7px solid rgb(12, 25, 138);
+}
+
+.page__content {
+  flex: 0 1 100%;
+  border-right: 7px solid rgb(12, 25, 138);
+}
+
+.page__sidebar {
+  flex: 1 0 300px;
 }
 
 .page__main {
