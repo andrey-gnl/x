@@ -1,19 +1,32 @@
-import React, { Component } from 'react'
-import './header.sass'
+import React from 'react';
+import { AppBar, Toolbar, Typography, Link } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
-export default class Header extends Component {
-  render() {
-
-    return (
-      <header className="header">
-        <div className="header__list">
-          <span href="#" className="header__link">Stats</span>
-          <span href="#" className="header__link">Group</span>
-          <span href="#" className="header__link is-active">Play-off</span>
-          <span href="#" className="header__link">Results</span>
-        </div>
-      </header>
-    )
-
+const useStyles = makeStyles(theme => ({
+  links: {
+    '& > *': {
+      color: '#000'
+    },
+    '& > * + *': {
+      marginLeft: theme.spacing(1)
+    }
   }
-}
+}))
+
+const Header = (props) => {
+  const theme = props.theme;
+  const classes = useStyles();
+
+  return (
+    <AppBar position="sticky" color={theme.palette.common.white}>
+      <Toolbar>
+        <Typography className={classes.links}>
+          <Link href="/">Countries</Link>
+          <Link href="/federations">Federations</Link>
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default Header;

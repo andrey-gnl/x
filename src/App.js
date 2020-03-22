@@ -1,25 +1,26 @@
 import React from 'react';
-import './App.scss';
-import Header from './components/Header/';
-// import GroupList from './components/Group/GroupList';
-import PlayOff from './components/PlayOff/';
-import Sidebar from './components/Sidebar/';
+import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import {themeSettings} from './components/constants';
+import Header from './components/Header';
+import Countries from './components/Countries';
+
+const theme = createMuiTheme(themeSettings);
 
 function App() {
+
   return (
-    <div className="page">
-      <div className="page__content">
-        <div className="page__header">
-          <Header />
-        </div>
-        <div className="page__main">
-          <PlayOff />
-        </div>
-      </div>
-      <div className="page__sidebar">
-        <Sidebar />
-      </div>
-    </div>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Header theme={theme} />
+        <Switch>
+          <Route path="/">
+            <Countries />
+          </Route>
+        </Switch>
+      </ThemeProvider>
+
+    </Router>
   );
 }
 
