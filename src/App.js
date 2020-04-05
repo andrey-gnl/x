@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import {themeSettings} from './components/constants';
+import { themeSettings } from './components/constants';
 import Header from './components/Header';
 import Countries from './components/Countries';
 
@@ -11,6 +11,7 @@ function App() {
 
   return (
     <Router>
+
       <ThemeProvider theme={theme}>
         <Header theme={theme} />
         <Switch>

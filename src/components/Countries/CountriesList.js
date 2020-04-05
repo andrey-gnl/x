@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Link } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
@@ -10,8 +10,8 @@ const styles = {
   }
 };
 
-
 class CountriesList extends Component {
+
   state = {
     data: [],
     loading: true
@@ -25,11 +25,11 @@ class CountriesList extends Component {
     });
   }
 
-   render() {
-    const {classes} = this.props;
+  render() {
     const {loading, data} = this.state;
+    const {classes, match} = this.props;
+    const { url } = match;
     let content = 'Loading...';
-    const { url } = this.props.match;
 
     if(!loading) {
       content = data.reduce((acc, country) => {
@@ -49,6 +49,7 @@ class CountriesList extends Component {
 
       }, [])
     }
+
     return (
       <div>
         {content}

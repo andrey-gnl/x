@@ -8,22 +8,21 @@ const Countries = () => {
   let { path } = useRouteMatch();
 
   return (
-    <div>
-      <Container >
-        <h2>Countries</h2>
-        <Divider />
+    <Container >
+      <h2>Countries</h2>
 
-        <Switch>
-          <Route exact path={path}>
-            <CountriesList />
-          </Route>
-          <Route path={`${path}/:countryId`}>
-            <Country />
-          </Route>
-        </Switch>
+      <Divider />
+      <Switch>
+        <Route exact path={path}>
+          <CountriesList />
+        </Route>
 
-      </Container>
-    </div>
+        <Route path={`${path}/:countryId`}>
+          <Country />
+        </Route>
+      </Switch>
+
+    </Container>
   );
 };
 

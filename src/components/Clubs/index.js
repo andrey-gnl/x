@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import
+import React, { Component } from 'react';
+import { API_KEY, API_SECRET_KEY } from '../constants';
 
 export default class Clubs extends Component {
 
@@ -9,12 +9,11 @@ export default class Clubs extends Component {
   }
 
   componentDidMount() {
-    fetch(`/api-client/teams/list.json?key=He2aaauPjroKqVba&secret=7jz2KqorkePH30oLerVoCpeVRCFiyQtG`)
+    fetch(`/api-client/teams/list.json?key=${API_KEY}&secret=${API_SECRET_KEY}`)
     .then(res => res)
     .then(({teams}) => {
       this.setState({data: teams, loaded: true});
     });
-
   }
 
   buildTable() {
@@ -25,8 +24,9 @@ export default class Clubs extends Component {
     const content = this.state.loaded ? this.buildTable() : 'Loading...';
     return (
       <div>
-          {content}
+        {content}
       </div>
     )
   }
+
 }
