@@ -1,27 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react'
+import { Container, Divider } from '@material-ui/core';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import CountriesList from './CountriesList';
+import Country from '../Country/';
 
-class Leagues extends Component {
-  state = {
-    countries: [],
-    loaded: false
-  }
+const Countries = () => {
+  let { path } = useRouteMatch();
 
-  componentDidMount() {
-    fetch('/api-client/countries/list.json?key=He2aaauPjroKqVba&secret=7jz2KqorkePH30oLerVoCpeVRCFiyQtG')
-    .then(response => response.json())
-    .then(result => {
-      this.setState({countries: result.country, loaded: true});
-    });
-  }
+  return (
+    <div>
+      <Container >
+        <h2>Countries</h2>
+        <Divider />
 
-  render() {
-    // const list = this.state.countries.map();
-    return (
-      <div>
-        {/* {this.state.leagues} */}
-      </div>
-    );
-  }
-}
+        <Switch>
+          <Route exact path={path}>
+            <CountriesList />
+          </Route>
+          <Route path={`${path}/:countryId`}>
+            <Country />
+          </Route>
+        </Switch>
 
-export default Leagues;
+      </Container>
+    </div>
+  );
+};
+
+export default Countries;
