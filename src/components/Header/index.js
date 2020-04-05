@@ -3,6 +3,11 @@ import { AppBar, Toolbar, Typography, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
+  header: {
+    '&' : {
+      'background-color': '#fff'
+    }
+  },
   links: {
     '& > *': {
       color: '#000'
@@ -11,17 +16,16 @@ const useStyles = makeStyles(theme => ({
       marginLeft: theme.spacing(1)
     }
   }
-}))
+}));
 
 const Header = (props) => {
-  const theme = props.theme;
   const classes = useStyles();
 
   return (
-    <AppBar position="sticky" color={theme.palette.common.white}>
+    <AppBar position="sticky" className={classes.header}>
       <Toolbar>
         <Typography className={classes.links}>
-          <Link href="/">Countries</Link>
+          <Link href="/countries">Countries</Link>
           <Link href="/federations">Federations</Link>
         </Typography>
       </Toolbar>
