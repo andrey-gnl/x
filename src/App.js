@@ -14,7 +14,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Header theme={theme} />
         <Switch>
-          <Route path="/">
+          <Route path="/countries">
             <Countries />
           </Route>
         </Switch>
