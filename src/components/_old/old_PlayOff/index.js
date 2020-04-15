@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Stage from './Stage';
-import { API_KEY, API_SECRET_KEY, UCL_ID } from '../constants'
+import { API_KEY, API_SECRET_KEY, UCL_ID } from '../../constants'
 
 import './playoff.sass';
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Match from '../Match/';
+import Match from '../old/old_Match';
 
 
 class Stage extends Component {

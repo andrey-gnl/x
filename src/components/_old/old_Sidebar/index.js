@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Sidebar.sass'
 import Table from './Table'
-import {API_KEY, API_SECRET_KEY} from '../constants'
+import {API_KEY, API_SECRET_KEY} from '../../constants'
 
 class Sidebar extends Component {
 
