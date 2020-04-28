@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { themeSettings } from './components/constants';
 import Header from './components/Header';
@@ -18,6 +18,7 @@ function App() {
           <Route path="/countries">
             <Countries />
           </Route>
+          <Redirect exact from="/" to="countries" />
         </Switch>
       </ThemeProvider>
 
